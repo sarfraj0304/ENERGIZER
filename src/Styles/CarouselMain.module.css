@@ -1,0 +1,9 @@
+.slide {
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  transition: all 2s;
+}
+.main_slider {
+  max-height: 500px;
+}
