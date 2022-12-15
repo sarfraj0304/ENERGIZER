@@ -1,5 +1,4 @@
 import { SkeletonLoader } from "../components/SkeletonLoader";
-
 import {
   Box,
   Button,
@@ -10,6 +9,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { RxDotFilled } from "react-icons/rx";
+import { ImNewspaper } from "react-icons/im";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from "react";
@@ -17,10 +17,9 @@ import styles from "../Styles/TrendingNearYou.module.css";
 import axios from "axios";
 import "../index.css";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
-import { Link } from "react-router-dom";
 
-const TopMoviesInPunjabi = () => {
-  const cat = "PunjabiMovies";
+const FreeLiveNews = () => {
+  const cat = "News";
   const [data, setData] = useState([]);
   const [loader, setLoader] = useState(true);
 
@@ -42,8 +41,8 @@ const TopMoviesInPunjabi = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-      slidesToSlide: 5,
+      items: 3,
+      slidesToSlide: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 630 },
@@ -72,7 +71,7 @@ const TopMoviesInPunjabi = () => {
         textAlign="left"
         fontSize={{ base: "14px", md: "20px" }}
       >
-        Top ZEE5 Movies in Punjabi
+        Free Live News
       </Heading>
       <Carousel
         responsive={responsive}
@@ -85,15 +84,14 @@ const TopMoviesInPunjabi = () => {
             <SkeletonLoader />
           ) : (
             <Box
-              overflow="hidden"
               borderRadius="6px"
               bg={bg}
               className={styles.hover_effect}
               key={el.id}
-              h={{ base: "250px", md: "360px" }}
-              maxW={{ base: "150px", md: "240" }}
+              h={{ base: "160px", md: "330px" }}
+              maxW={{ base: "165px", md: "450" }}
               transition=" all 0.3s"
-              _hover={{ padding: "10px" }}
+              _hover={{ padding: "5px" }}
               position="relative"
             >
               <Box
@@ -103,39 +101,37 @@ const TopMoviesInPunjabi = () => {
                 className={styles.title}
                 paddingLeft={{ base: "5px", md: "10px" }}
               >
-                <Text fontSize={{ base: "10px", md: "15px" }}>{el.title}</Text>
+                <Text fontSize={{ base: "10px", md: "15px" }}>{el.source}</Text>
                 <Text
                   display="flex"
                   alignItems="center"
                   fontSize={{ base: "8px", md: "12px" }}
                 >
-                  {el.genre}
-                  {<RxDotFilled />}
-                  {el.released}
+                  {/* {date} */}
+
+                  {/* {el.released} */}
                 </Text>
                 <Box display="flex" marginTop={{ base: "5px", md: "10px" }}>
-                  <Link to={`/MovieDetails/${cat}/${el.title}/${el.id}`}>
-                    {" "}
-                    <Button
-                      colorScheme="teal"
-                      variant="outline"
-                      borderColor={borderColor}
-                      backgroundColor={bg}
-                      width={{ base: "75px", md: "90px" }}
-                      fontSize={{ base: "8px", md: "12px" }}
-                      height={{ base: "25px", md: "35px" }}
-                      _hover={{
-                        bgColor: "#320c52",
-                        color: "white",
-                        border: "none",
-                      }}
-                      leftIcon={<BsFillPlayFill />}
-                      color={fontColor}
-                      marginRight="10px"
-                    >
-                      Watch Now
-                    </Button>
-                  </Link>
+                  <Button
+                    colorScheme="teal"
+                    variant="outline"
+                    borderColor={borderColor}
+                    backgroundColor={bg}
+                    width={{ base: "75px", md: "90px" }}
+                    fontSize={{ base: "8px", md: "12px" }}
+                    height={{ base: "25px", md: "35px" }}
+                    _hover={{
+                      bgColor: "#320c52",
+                      color: "white",
+                      border: "none",
+                    }}
+                    leftIcon={<ImNewspaper />}
+                    color={fontColor}
+                    marginRight="10px"
+                  >
+                    Read Now
+                  </Button>
+
                   <Button
                     colorScheme="teal"
                     variant="outline"
@@ -158,8 +154,8 @@ const TopMoviesInPunjabi = () => {
               <Image
                 src={el.image}
                 height="inherit"
-                width="inherit"
-                objectFit="cover"
+                width="100%"
+                objectFit="fill"
                 borderRadius="6px"
               />
             </Box>
@@ -170,4 +166,4 @@ const TopMoviesInPunjabi = () => {
   );
 };
 
-export default TopMoviesInPunjabi;
+export default FreeLiveNews;

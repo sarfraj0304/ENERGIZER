@@ -68,11 +68,14 @@ export default function Navbar() {
               alignItems={"center"}
               justifyContent="center"
             >
-              <Image
-                width={{ base: "70%", md: "100%" }}
-                src={ZeeLogo}
-                alt="Zee5-Logo"
-              />
+              <Link to="/">
+                {" "}
+                <Image
+                  width={{ base: "70%", md: "100%" }}
+                  src={ZeeLogo}
+                  alt="Zee5-Logo"
+                />
+              </Link>
             </Box>
             <HStack
               as={"nav"}
@@ -177,19 +180,22 @@ export default function Navbar() {
 
             <Center>
               <Tooltip label="Become Premium Member" fontSize={"10px"}>
-                <Button
-                  width={{ base: "73px", md: "105px" }}
-                  mr={4}
-                  height="35px"
-                  _hover={{ bgColor: "#320c52" }}
-                  leftIcon={<FaCrown />}
-                  backgroundColor="#8230c6"
-                  color="white"
-                  variant="solid"
-                  fontSize={{ base: "10px", md: "14px" }}
-                >
-                  BUY PLAN
-                </Button>
+                <Link to="/buyPlan">
+                  {" "}
+                  <Button
+                    width={{ base: "73px", md: "105px" }}
+                    mr={4}
+                    height="35px"
+                    _hover={{ bgColor: "#320c52" }}
+                    leftIcon={<FaCrown />}
+                    backgroundColor="#8230c6"
+                    color="white"
+                    variant="solid"
+                    fontSize={{ base: "10px", md: "14px" }}
+                  >
+                    BUY PLAN
+                  </Button>
+                </Link>
               </Tooltip>
             </Center>
             <Menu>

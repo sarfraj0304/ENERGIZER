@@ -32,5 +32,7 @@ export const GetApiData = () => {
   //     "X-RapidAPI-Key": "9454a53b12msh7d2f6255a0c720dp1f1455jsn5dbcbc11f2d7",
   //     "X-RapidAPI-Host": "ott-details.p.rapidapi.com",
   //   },
+  //   method: "GET",
+  //   url: "https://newsapi.org/v2/top-headlines?country=in&pageSize=40&apiKey=ef21743592be46ea9c2941b45420e43a",
   // });
 };
