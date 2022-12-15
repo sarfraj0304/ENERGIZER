@@ -15,12 +15,18 @@ import styles from "../Styles/TrendingNearYou.module.css";
 import axios from "axios";
 import "../index.css";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { SkeletonLoader } from "../components/SkeletonLoader";
 
 const TopTenMoviesInIndia = () => {
   const cat = "Top10Movies";
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(true);
 
   useEffect(() => {
+    setInterval(() => {
+      setLoader(false);
+    }, 4000);
     axios
       .get(`http://localhost:3000/${cat}`)
       .then((res) => setData(res.data))
@@ -58,6 +64,7 @@ const TopTenMoviesInIndia = () => {
       paddingTop="30px"
       bg={useColorModeValue("white", "#0f0617")}
       overflow={"visible"}
+      paddingBottom={{ base: "0px", md: "30px" }}
     >
       <Heading
         marginBottom={{ base: "6px", md: "20px" }}
@@ -72,84 +79,91 @@ const TopTenMoviesInIndia = () => {
         infinite={true}
         removeArrowOnDeviceType={["tablet", "mobile"]}
       >
-        {data.map((el) => (
-          <Box
-            borderRadius="6px"
-            bg={bg}
-            className={styles.hover_effect}
-            key={el.id}
-            h={{ base: "250px", md: "360px" }}
-            maxW={{ base: "150px", md: "220" }}
-            transition=" all 0.1s"
-            _hover={{ padding: "5px" }}
-            position="relative"
-          >
+        {data.map((el) =>
+          loader ? (
+            <SkeletonLoader />
+          ) : (
             <Box
-              bg={bg}
-              color={fontColor}
-              fontSize={{ base: "12px", md: "14px" }}
-              className={styles.title}
-              paddingLeft={{ base: "5px", md: "10px" }}
-            >
-              <Text fontSize={{ base: "10px", md: "15px" }}>{el.title}</Text>
-              <Text
-                display="flex"
-                alignItems="center"
-                fontSize={{ base: "8px", md: "12px" }}
-              >
-                {el.genre}
-                {<RxDotFilled />}
-                {el.released}
-              </Text>
-              <Box display="flex" marginTop={{ base: "5px", md: "10px" }}>
-                <Button
-                  colorScheme="teal"
-                  variant="outline"
-                  borderColor={borderColor}
-                  backgroundColor={bg}
-                  width={{ base: "75px", md: "90px" }}
-                  fontSize={{ base: "8px", md: "12px" }}
-                  height={{ base: "25px", md: "35px" }}
-                  _hover={{
-                    bgColor: "#320c52",
-                    color: "white",
-                    border: "none",
-                  }}
-                  leftIcon={<BsFillPlayFill />}
-                  color={fontColor}
-                  marginRight="10px"
-                >
-                  Watch Now
-                </Button>
-
-                <Button
-                  colorScheme="teal"
-                  variant="outline"
-                  border="none"
-                  backgroundColor={bg}
-                  width={{ base: "73px", md: "90px" }}
-                  fontSize={{ base: "8px", md: "12px" }}
-                  height={{ base: "25px", md: "35px" }}
-                  _hover={{
-                    color: "red",
-                  }}
-                  leftIcon={<BsShare />}
-                  color={fontColor}
-                  marginRight="10px"
-                >
-                  Share
-                </Button>
-              </Box>
-            </Box>
-            <Image
-              src={el.image}
-              height="inherit"
-              width="inherit"
-              objectFit="cover"
+              overflow="hidden"
               borderRadius="6px"
-            />
-          </Box>
-        ))}
+              bg={bg}
+              className={styles.hover_effect}
+              key={el.id}
+              h={{ base: "250px", md: "360px" }}
+              maxW={{ base: "150px", md: "240" }}
+              transition=" all 0.3s"
+              _hover={{ padding: "10px" }}
+              position="relative"
+            >
+              <Box
+                bg={bg}
+                color={fontColor}
+                fontSize={{ base: "12px", md: "14px" }}
+                className={styles.title}
+                paddingLeft={{ base: "5px", md: "10px" }}
+              >
+                <Text fontSize={{ base: "10px", md: "15px" }}>{el.title}</Text>
+                <Text
+                  display="flex"
+                  alignItems="center"
+                  fontSize={{ base: "8px", md: "12px" }}
+                >
+                  {el.genre}
+                  {<RxDotFilled />}
+                  {el.released}
+                </Text>
+                <Box display="flex" marginTop={{ base: "5px", md: "10px" }}>
+                  <Link to={`/MovieDetails/${cat}/${el.title}/${el.id}`}>
+                    {" "}
+                    <Button
+                      colorScheme="teal"
+                      variant="outline"
+                      borderColor={borderColor}
+                      backgroundColor={bg}
+                      width={{ base: "75px", md: "90px" }}
+                      fontSize={{ base: "8px", md: "12px" }}
+                      height={{ base: "25px", md: "35px" }}
+                      _hover={{
+                        bgColor: "#320c52",
+                        color: "white",
+                        border: "none",
+                      }}
+                      leftIcon={<BsFillPlayFill />}
+                      color={fontColor}
+                      marginRight="10px"
+                    >
+                      Watch Now
+                    </Button>
+                  </Link>
+                  <Button
+                    colorScheme="teal"
+                    variant="outline"
+                    border="none"
+                    backgroundColor={bg}
+                    width={{ base: "73px", md: "90px" }}
+                    fontSize={{ base: "8px", md: "12px" }}
+                    height={{ base: "25px", md: "35px" }}
+                    _hover={{
+                      color: "red",
+                    }}
+                    leftIcon={<BsShare />}
+                    color={fontColor}
+                    marginRight="10px"
+                  >
+                    Share
+                  </Button>
+                </Box>
+              </Box>
+              <Image
+                src={el.image}
+                height="inherit"
+                width="inherit"
+                objectFit="cover"
+                borderRadius="6px"
+              />
+            </Box>
+          )
+        )}
       </Carousel>
     </Container>
   );

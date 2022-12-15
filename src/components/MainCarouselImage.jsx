@@ -2,11 +2,12 @@ import { Button, Image, Box, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaCrown } from "react-icons/fa";
 import { BsFillPlayFill } from "react-icons/bs";
 import styles from "../Styles/CarouselMain.module.css";
+import { Link } from "react-router-dom";
 
 export const MainCarouselImage = ({ image, title, id }) => {
   return (
     <>
-      <Image w="100%" src={image} objectFit="contain" />
+      <Image minW="100%" src={image} />
       <Text
         color={useColorModeValue("white", "white")}
         position="absolute"
@@ -24,20 +25,22 @@ export const MainCarouselImage = ({ image, title, id }) => {
         left={{ base: "10px", md: "50px" }}
         zIndex="1"
       >
-        <Button
-          colorScheme="teal"
-          variant="outline"
-          backgroundColor="rgba(0, 0, 0, 0.305)"
-          width={{ base: "73px", md: "105px" }}
-          fontSize={{ base: "10px", md: "14px" }}
-          height="35px"
-          _hover={{ bgColor: "white", color: "black", border: "none" }}
-          leftIcon={<BsFillPlayFill />}
-          color="white"
-          marginRight="10px"
-        >
-          Play Now
-        </Button>
+        <Link to={`/MovieDetails/TopNetflixData/${title}/${id}`}>
+          <Button
+            colorScheme="teal"
+            variant="outline"
+            backgroundColor="rgba(0, 0, 0, 0.305)"
+            width={{ base: "73px", md: "105px" }}
+            fontSize={{ base: "10px", md: "14px" }}
+            height="35px"
+            _hover={{ bgColor: "white", color: "black", border: "none" }}
+            leftIcon={<BsFillPlayFill />}
+            color="white"
+            marginRight="10px"
+          >
+            Play Now
+          </Button>
+        </Link>
         <Button
           width={{ base: "73px", md: "105px" }}
           height="35px"

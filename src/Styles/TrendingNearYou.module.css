@@ -10,6 +10,7 @@
   bottom: 0px;
   left: 0px;
   text-align: left;
+  border-radius: 6px;
 }
 
 .hover_effect:hover .title {

@@ -4,6 +4,7 @@ import { MainCarousel } from "../components/MainCarousel";
 import TopTenMoviesInIndia from "../HomeComponent/Top10Movies";
 import TrendingNearYou from "../HomeComponent/TrendingNearYou";
 import TopMoviesInPunjabi from "../HomeComponent/TopMoviesInPunjabi";
+import FreeLiveNews from "../HomeComponent/News";
 export const Home = () => {
   return (
     <>
@@ -12,6 +13,7 @@ export const Home = () => {
       <TrendingNearYou />
       <TopTenMoviesInIndia />
       <TopMoviesInPunjabi />
+      <FreeLiveNews />
       <Footer />
     </>
   );
