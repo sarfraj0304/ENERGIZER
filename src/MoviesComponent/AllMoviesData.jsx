@@ -1,86 +1,54 @@
-import { SkeletonLoader } from "../components/SkeletonLoader";
 import {
   Box,
   Button,
   Container,
-  Heading,
-  Image,
+  SimpleGrid,
   Text,
+  Image,
   useColorModeValue,
+  Heading,
 } from "@chakra-ui/react";
-import { RxDotFilled } from "react-icons/rx";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { useEffect, useState, useContext } from "react";
-import { ContextProvider } from "../Context/ContextProviderMovie";
 import styles from "../Styles/TrendingNearYou.module.css";
+import React from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import "../index.css";
+import { SkeletonLoader } from "../components/SkeletonLoader";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
-const TrendingNearYou = () => {
+import { RxDotFilled } from "react-icons/rx";
+export const AllMoviesData = ({ cat, type }) => {
+  const [movie, setMovie] = useState([]);
   const [loader, setLoader] = useState(true);
-  const cat = "TopNetflixData";
-  const [data, setData] = useState([]);
-  const { SetMovieCategory } = useContext(ContextProvider);
   useEffect(() => {
     setInterval(() => {
       setLoader(false);
     }, 4000);
     axios
       .get(`http://localhost:3000/${cat}`)
-      .then((res) => setData(res.data))
+      .then((res) => setMovie(res.data))
       .catch(console.error());
   }, []);
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 6,
-      slidesToSlide: 6,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 5,
-      slidesToSlide: 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 630 },
-      items: 3,
-      slidesToSlide: 3,
-    },
-    mobile: {
-      breakpoint: { max: 630, min: 0 },
-      items: 2,
-      slidesToSlide: 2,
-    },
-  };
   const bg = useColorModeValue("#0f0617", "white");
   const fontColor = useColorModeValue("white", "black");
   const borderColor = useColorModeValue("white", "black");
   return (
     <Container
-      maxW={"100%"}
-      paddingTop="30px"
       bg={useColorModeValue("white", "#0f0617")}
-      overflow={"visible"}
-      paddingBottom={{ base: "0px", md: "30px" }}
+      minW="100%"
+      padding={{ base: "20px", md: "40px" }}
     >
       <Heading
-        marginBottom={{ base: "6px", md: "20px" }}
+        marginBottom={{ base: "10px", md: "20px" }}
         textAlign="left"
-        fontSize={{ base: "14px", md: "20px" }}
+        fontSize={{ base: "17px", md: "30px" }}
       >
-        Trending Near You
+        Popular {type}
       </Heading>
-      <Carousel
-        responsive={responsive}
-        customTransition="all 3s"
-        infinite={true}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+      <SimpleGrid
+        columns={{ base: "2", md: "5" }}
+        gap={{ base: "20px", md: "40px" }}
       >
-        {data.map((el) =>
+        {movie.map((el) =>
           loader ? (
             <SkeletonLoader />
           ) : (
@@ -113,15 +81,10 @@ const TrendingNearYou = () => {
                   {<RxDotFilled />}
                   {el.released}
                 </Text>
-
-                {/* Watch Now Button */}
                 <Box display="flex" marginTop={{ base: "5px", md: "10px" }}>
                   <Link to={`/MovieDetails/${cat}/${el.title}/${el.id}`}>
                     {" "}
                     <Button
-                      // onClick={() => {
-                      //   SetMovieCategory(cat);
-                      // }}
                       colorScheme="teal"
                       variant="outline"
                       borderColor={borderColor}
@@ -141,7 +104,6 @@ const TrendingNearYou = () => {
                       Watch Now
                     </Button>
                   </Link>
-
                   <Button
                     colorScheme="teal"
                     variant="outline"
@@ -171,9 +133,7 @@ const TrendingNearYou = () => {
             </Box>
           )
         )}
-      </Carousel>
+      </SimpleGrid>
     </Container>
   );
 };
-
-export default TrendingNearYou;

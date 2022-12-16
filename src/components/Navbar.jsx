@@ -38,10 +38,18 @@ import {
 import ZeeDrawer from "./Drawer";
 import { Search } from "../Pages/Search";
 import ZeeLogo from "../AllRoutes/ZeeLogo.png";
+import { useState } from "react";
+import { LoginButton } from "../Pages/LoginButton";
 export default function Navbar() {
+  const [inputText, setInputText] = useState("");
   const { colorMode, toggleColorMode } = useColorMode();
   const bg = useColorModeValue("gray.100", "gray.900");
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const colorNav = useColorModeValue("#8230c6", "#8230c6");
+  const handleSearch = () => {
+    console.log(inputText);
+  };
+
   return (
     <>
       <Box
@@ -89,7 +97,7 @@ export default function Navbar() {
                 <NavLink
                   style={({ isActive }) => {
                     return isActive
-                      ? { textDecoration: "underline" }
+                      ? { color: colorNav }
                       : { textDecoration: "none" };
                   }}
                   to="/"
@@ -100,7 +108,7 @@ export default function Navbar() {
               <NavLink
                 style={({ isActive }) => {
                   return isActive
-                    ? { textDecoration: "underline" }
+                    ? { color: colorNav }
                     : { textDecoration: "none" };
                 }}
                 to="/TVShows"
@@ -110,7 +118,7 @@ export default function Navbar() {
               <NavLink
                 style={({ isActive }) => {
                   return isActive
-                    ? { textDecoration: "underline" }
+                    ? { color: colorNav }
                     : { textDecoration: "none" };
                 }}
                 to="/Movies"
@@ -120,7 +128,7 @@ export default function Navbar() {
               <NavLink
                 style={({ isActive }) => {
                   return isActive
-                    ? { textDecoration: "underline" }
+                    ? { color: colorNav }
                     : { textDecoration: "none" };
                 }}
                 to="/WebSeries"
@@ -130,7 +138,7 @@ export default function Navbar() {
               <NavLink
                 style={({ isActive }) => {
                   return isActive
-                    ? { textDecoration: "underline" }
+                    ? { color: colorNav }
                     : { textDecoration: "none" };
                 }}
                 to="/News"
@@ -140,21 +148,34 @@ export default function Navbar() {
             </HStack>
           </HStack>
           <Flex alignItems={"center"}>
-            {/* Input Search */}
+            {/*-------------------------- Input Search------------------------- */}
             <Center>
               <InputGroup mr={"10px"} display={{ base: "none", md: "block" }}>
-                <InputLeftElement
+                {/* <InputLeftElement
                   pointerEvents="none"
                   children={<IoSearch fontSize={"22px"} />}
-                />
+                /> */}
                 <Input
                   type="text"
                   w={"290px"}
                   transition="all 0.5s"
+                  value={inputText}
+                  onChange={(e) => {
+                    setInputText(e.target.value);
+                  }}
                   fontSize={"13px"}
                   placeholder="Search for Movies, Shows, Channels etc."
                   _focus={{ width: "350px" }}
                 />
+                <Link to={`/searchTmdbData/${inputText}`}>
+                  {" "}
+                  <Button
+                    onClick={handleSearch}
+                    marginLeft="5px"
+                    size={{ base: "sm", md: "md" }}
+                    leftIcon={<IoSearch />}
+                  ></Button>
+                </Link>
               </InputGroup>
             </Center>
             {/* small screen search */}
@@ -198,7 +219,8 @@ export default function Navbar() {
                 </Link>
               </Tooltip>
             </Center>
-            <Menu>
+            <LoginButton />
+            {/* <Menu>
               <MenuButton
                 as={Button}
                 rounded={"full"}
@@ -235,7 +257,7 @@ export default function Navbar() {
                   Logout
                 </MenuItem>
               </MenuList>
-            </Menu>
+            </Menu> */}
           </Flex>
         </Flex>
 

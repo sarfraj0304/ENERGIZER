@@ -55,7 +55,7 @@ const TopTenMoviesInIndia = () => {
       slidesToSlide: 2,
     },
   };
-  const bg = useColorModeValue("black", "white");
+  const bg = useColorModeValue("#0f0617", "white");
   const fontColor = useColorModeValue("white", "black");
   const borderColor = useColorModeValue("white", "black");
   return (

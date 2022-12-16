@@ -101,16 +101,6 @@
       "id": 35
     },
     {
-      "image": "https://m.media-amazon.com/images/M/MV5BNDZhZDBlOWQtNTc5YS00MmVkLWE3ZmEtOGQxOThiYzhkMGMyXkEyXkFqcGdeQXVyODIwMDI1NjM@._V1_UY268_CR4,0,182,268_AL_.jpg",
-      "imdbid": "tt6929642",
-      "rating": 6.6,
-      "released": 2018,
-      "description": "Kaala is about the life of Nellai / Tirunelveli based Tamils who live in large number in Mumbai.",
-      "title": "Kaala",
-      "genre": ["Action", "Drama"],
-      "id": 36
-    },
-    {
       "image": "https://m.media-amazon.com/images/M/MV5BMDNjZjkyNjQtNWMyMC00ODA5LTgyODctOGRiOWUwYTAzOWVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_UY268_CR3,0,182,268_AL_.jpg",
       "imdbid": "tt6826438",
       "rating": 7.6,
@@ -319,16 +309,6 @@
       "title": "NH 10",
       "genre": ["Action", "Crime", "Drama"],
       "id": 57
-    },
-    {
-      "image": "https://m.media-amazon.com/images/M/MV5BMDA2YjRiY2YtZjJlOC00NGQyLWI3YzQtZDgwNGI5Y2IyM2MxXkEyXkFqcGdeQXVyNzU4NzQwMDE@._V1_UX182_CR0,0,182,268_AL_.jpg",
-      "imdbid": "tt6926486",
-      "rating": 6.4,
-      "released": 2017,
-      "description": "From the rough streets and back alleys of Central Mumbai comes the sensational true story of Arun Gawli, a man who scripted his own destiny, eventually going on to become one of India's most feared gangsters. Today he remains an enigmatic figure; at once a volatile, power-hungry criminal for some and the respected \"Daddy\" or a modern day Robin Hood for the working-class neighborhood he belongs to...",
-      "title": "Daddy",
-      "genre": ["Action", "Biography", "Crime"],
-      "id": 58
     },
     {
       "image": "https://m.media-amazon.com/images/M/MV5BYjMwNDU1MTQtNDBjMS00YTVlLWE4NWYtODBmZDY1YTkzZWI1XkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_UY268_CR1,0,182,268_AL_.jpg",
@@ -1784,7 +1764,7 @@
     {
       "image": "https://gumlet.assettype.com/swarajya%2F2022-11%2F36966b42-e2b1-49c2-ac06-4e68af796bfd%2FXi.png?w=1200&auto=format%2Ccompress&ogImage=true",
       "title": "Why Xi Fears India As Much As The US: Civilisationally, We Are The Only Rival - Swarajya",
-      "description": null,
+      "description": "China may despise India’s “weakness” and guarded moves to isolate it globally, but it clearly has seen the writing on the wall.It fears India’s potential rise not only economically, but potential for global leadership and spiritual progress.",
       "source": "Swarajya",
       "id": 34
     },
@@ -1946,9 +1926,9 @@
       "id": 24
     },
     {
-      "image": null,
+      "image": "https://www.state.gov/wp-content/uploads/2022/06/06_27_2022-shutterstock_1384058903_1600px_X_900px.jpg",
       "title": "Hooch tragedy claims several lives in dry Bihar - The Hindu",
-      "description": null,
+      "description": "Officials put death toll at six, while villagers say at least 20 have died; several of the victims lost eyesight, while others are battling for life; family members block highway in protest; three held",
       "source": "Google News",
       "id": 25
     },
