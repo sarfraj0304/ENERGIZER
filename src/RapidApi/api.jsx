@@ -1,6 +1,12 @@
 import axios from "axios";
 
 export const GetApiData = () => {
+  return axios
+    .get(
+      `https://api.themoviedb.org/3/trending/movie/week?api_key=5eefa44e4d8e90b08488c82018c7ea3c`
+    )
+    .then((res) => console.log(res.data.results))
+    .catch(console.error());
   // return axios({
   // method: "GET",
   // url: "https://netflix54.p.rapidapi.com/search/",

@@ -5,6 +5,7 @@ import TopTenMoviesInIndia from "../HomeComponent/Top10Movies";
 import TrendingNearYou from "../HomeComponent/TrendingNearYou";
 import TopMoviesInPunjabi from "../HomeComponent/TopMoviesInPunjabi";
 import FreeLiveNews from "../HomeComponent/News";
+import { GetApiData } from "../RapidApi/api";
 export const Home = () => {
   return (
     <>
@@ -14,6 +15,7 @@ export const Home = () => {
       <TopTenMoviesInIndia />
       <TopMoviesInPunjabi />
       <FreeLiveNews />
+      {/* <GetApiData /> */}
       <Footer />
     </>
   );

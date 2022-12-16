@@ -97,10 +97,10 @@ export const BuyplanPage = () => {
             <Tr>
               <Td></Td>
               <Td>
-                <Checkbox size={{ base: "md", md: "lg" }}>Buy Plan</Checkbox>
+                <Button size={{ base: "md", md: "lg" }}>Buy Plan</Button>
               </Td>
               <Td>
-                <Checkbox size={{ base: "md", md: "lg" }}>Buy Plan</Checkbox>
+                <Button size={{ base: "md", md: "lg" }}>Buy Plan</Button>
               </Td>
             </Tr>
           </Tbody>

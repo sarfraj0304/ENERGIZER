@@ -17,6 +17,7 @@ import styles from "../Styles/TrendingNearYou.module.css";
 import axios from "axios";
 import "../index.css";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const FreeLiveNews = () => {
   const cat = "News";
@@ -55,7 +56,7 @@ const FreeLiveNews = () => {
       slidesToSlide: 2,
     },
   };
-  const bg = useColorModeValue("black", "white");
+  const bg = useColorModeValue("#0f0617", "white");
   const fontColor = useColorModeValue("white", "black");
   const borderColor = useColorModeValue("white", "black");
   return (
@@ -112,26 +113,28 @@ const FreeLiveNews = () => {
                   {/* {el.released} */}
                 </Text>
                 <Box display="flex" marginTop={{ base: "5px", md: "10px" }}>
-                  <Button
-                    colorScheme="teal"
-                    variant="outline"
-                    borderColor={borderColor}
-                    backgroundColor={bg}
-                    width={{ base: "75px", md: "90px" }}
-                    fontSize={{ base: "8px", md: "12px" }}
-                    height={{ base: "25px", md: "35px" }}
-                    _hover={{
-                      bgColor: "#320c52",
-                      color: "white",
-                      border: "none",
-                    }}
-                    leftIcon={<ImNewspaper />}
-                    color={fontColor}
-                    marginRight="10px"
-                  >
-                    Read Now
-                  </Button>
-
+                  <Link to={`/newsDetails/${el.id}`}>
+                    {" "}
+                    <Button
+                      colorScheme="teal"
+                      variant="outline"
+                      borderColor={borderColor}
+                      backgroundColor={bg}
+                      width={{ base: "75px", md: "90px" }}
+                      fontSize={{ base: "8px", md: "12px" }}
+                      height={{ base: "25px", md: "35px" }}
+                      _hover={{
+                        bgColor: "#320c52",
+                        color: "white",
+                        border: "none",
+                      }}
+                      leftIcon={<ImNewspaper />}
+                      color={fontColor}
+                      marginRight="10px"
+                    >
+                      Read Now
+                    </Button>
+                  </Link>
                   <Button
                     colorScheme="teal"
                     variant="outline"

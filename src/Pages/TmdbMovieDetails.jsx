@@ -24,44 +24,48 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { FaStar } from "react-icons/fa";
-// import { whiten } from "@chakra-ui/theme-tools";
 import { SkeletonLoader } from "../components/SkeletonLoader";
-const MovieDetails = () => {
+const TmdbMovieDetails = () => {
   const [loader, setLoader] = useState(true);
-
   const [data, setData] = useState([]);
   const [recommendedData, setRecommendedData] = useState([]);
-  const { id, cat } = useParams();
+  const { id } = useParams();
   useEffect(() => {
     setInterval(() => {
       setLoader(false);
     }, 3000);
     axios
-      .get(`http://localhost:3000/${cat}/${id}`)
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=5eefa44e4d8e90b08488c82018c7ea3c`
+      )
       .then((res) => setData(res.data))
       .catch(console.error());
   }, [id]);
 
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
-
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/Recommended`)
-      .then((res) => setRecommendedData(res.data))
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}/similar?api_key=5eefa44e4d8e90b08488c82018c7ea3c&language=hi-IN&page=1`
+      )
+      .then((res) => setRecommendedData(res.data.results))
       .catch(console.error());
   }, [id]);
 
-  const { image, imdbid, rating, released, description, title, type, genre } =
-    data;
+  const {
+    poster_path,
+    vote_average,
+    release_date,
+    overview,
+    original_title,
+    genres,
+  } = data;
 
   // Rating features
   const RatingArray = new Array(10).fill(<FaStar fontSize="23px" />);
-  for (let i = 0; i < rating; i++) {
+  for (let i = 0; i < vote_average; i++) {
     RatingArray[i] = <FaStar fontSize="23px" color="yellow" />;
   }
-  console.log(RatingArray);
+
   const bg = useColorModeValue("#0f0617", "white");
   const fontColor = useColorModeValue("white", "black");
   const borderColor = useColorModeValue("white", "black");
@@ -72,13 +76,14 @@ const MovieDetails = () => {
         bg={useColorModeValue("white", "#0f0617")}
         className={styles.parent_div}
         display={{ base: "block", md: "flex" }}
-        justifyContent="space-between"
+        justifyContent="space-around"
       >
         {/* ----------------Left Div ------------------------*/}
-        <Box width={{ base: "100%", md: "65%" }}>
+        <Box width={{ base: "100%", md: "55%" }}>
           <Image
-            width="100%"
-            src={image}
+            minW="100%"
+            // objectFit="cover"
+            src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${poster_path}`}
             height={{ base: "220px", md: "520px" }}
           />
           {/* Advertisement buy */}
@@ -123,7 +128,7 @@ const MovieDetails = () => {
             display="flex"
             alignItems="center"
           >
-            {title}
+            {original_title}
           </Heading>
           <Text
             fontSize={{ base: "1rem", md: "1.4rem" }}
@@ -144,11 +149,11 @@ const MovieDetails = () => {
             justifyContent="space-between"
             alignItems="center"
             color={useColorModeValue("black", "#a785ff")}
-            maxW={{ base: "30%", md: "18%" }}
+            maxW={{ base: "37%", md: "25%" }}
           >
-            {type}
+            Movie
             {<RxDotFilled />}
-            {released}
+            {release_date}
           </Text>
           <Text
             fontSize={{ base: "1rem", md: "1.4rem" }}
@@ -161,9 +166,9 @@ const MovieDetails = () => {
           >
             1h 52m
             {<RxDotFilled />}
-            {genre}
+            Fiction
             {<RxDotFilled />}
-            Adventure
+            Adventrue
           </Text>
           <Flex
             marginTop={{ base: "10px", md: "30px" }}
@@ -233,7 +238,7 @@ const MovieDetails = () => {
             fontSize={{ base: "15px", md: "20px" }}
             marginTop={{ base: "15px", md: "20px" }}
           >
-            {description}
+            {overview}
           </Text>
         </Box>
         {/*-------------------- Right Div --------------*/}
@@ -277,21 +282,19 @@ const MovieDetails = () => {
                     paddingLeft={{ base: "5px", md: "10px" }}
                   >
                     <Text fontSize={{ base: "10px", md: "15px" }}>
-                      {el.title}
+                      {el.original_title}
                     </Text>
                     <Text
                       display="flex"
                       alignItems="center"
                       fontSize={{ base: "8px", md: "12px" }}
                     >
-                      {el.genre}
+                      Movie
                       {<RxDotFilled />}
-                      {el.released}
+                      {el.release_date}
                     </Text>
                     <Box display="flex" marginTop={{ base: "5px", md: "10px" }}>
-                      <Link
-                        to={`/MovieDetails/Recommended/${el.title}/${el.id}`}
-                      >
+                      <Link to={`/TmdbMovieDetails/${el.id}`}>
                         <Button
                           colorScheme="teal"
                           variant="outline"
@@ -332,7 +335,7 @@ const MovieDetails = () => {
                     </Box>
                   </Box>
                   <Image
-                    src={el.image}
+                    src={`https://image.tmdb.org/t/p/w220_and_h330_face/${el.poster_path}`}
                     height="inherit"
                     width="inherit"
                     objectFit="cover"
@@ -349,4 +352,4 @@ const MovieDetails = () => {
   );
 };
 
-export default MovieDetails;
+export default TmdbMovieDetails;

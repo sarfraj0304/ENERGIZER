@@ -6,6 +6,9 @@ import { News } from "../Pages/News";
 import { TVShows } from "../Pages/TVShows";
 import MovieDetails from "../Pages/MovieDetails";
 import { BuyplanPage } from "../Pages/BuyPlan";
+import { NewsDetails } from "../Pages/NewsDetails";
+import TmdbMovieDetails from "../Pages/TmdbMovieDetails";
+import { SearchDataFromTmdb } from "../Pages/SearchDataFromTmdb";
 function AllRoutes() {
   return (
     <Routes>
@@ -19,6 +22,15 @@ function AllRoutes() {
         element={<MovieDetails />}
       ></Route>
       <Route path="/buyPlan" element={<BuyplanPage />}></Route>
+      <Route path="/newsDetails/:id" element={<NewsDetails />}></Route>
+      <Route
+        path="/TmdbMovieDetails/:id"
+        element={<TmdbMovieDetails />}
+      ></Route>
+      <Route
+        path="/searchTmdbData/:inputText"
+        element={<SearchDataFromTmdb />}
+      ></Route>
     </Routes>
   );
 }

@@ -1,3 +1,6 @@
+import React from "react";
+import { useParams, Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import {
   Box,
@@ -11,19 +14,18 @@ import {
 } from "@chakra-ui/react";
 import { Pagination } from "./Pagination";
 import styles from "../Styles/TrendingNearYou.module.css";
-import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { SkeletonLoader } from "../components/SkeletonLoader";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import { RxDotFilled } from "react-icons/rx";
-import Navbar from "../components/Navbar";
 
-export const WebSeries = () => {
+export const SearchDataFromTmdb = () => {
+  const { inputText } = useParams();
   const [movie, setMovie] = useState([]);
   const [loader, setLoader] = useState(true);
   const [Page, setPage] = useState(1);
+  const [totalResults, SetTotalResults] = useState(0);
   useEffect(() => {
     try {
       setInterval(() => {
@@ -31,14 +33,17 @@ export const WebSeries = () => {
       }, 2000);
       axios
         .get(
-          `https://api.themoviedb.org/3/movie/upcoming?api_key=5eefa44e4d8e90b08488c82018c7ea3c&language=hi-IN&page=${Page}`
+          `https://api.themoviedb.org/3/search/movie?api_key=5eefa44e4d8e90b08488c82018c7ea3c&language=en-US&query=${inputText}&page=${Page}&include_adult=false`
         )
-        .then((res) => setMovie(res.data.results));
+        .then((res) => {
+          SetTotalResults(res.data.total_results);
+          setMovie(res.data.results);
+        });
     } catch (error) {
       console.error();
       setLoader(true);
     }
-  }, [Page]);
+  }, [Page, inputText]);
   const bg = useColorModeValue("#0f0617", "white");
   const fontColor = useColorModeValue("white", "black");
   const borderColor = useColorModeValue("white", "black");
@@ -53,9 +58,9 @@ export const WebSeries = () => {
         <Heading
           marginBottom={{ base: "10px", md: "20px" }}
           textAlign="left"
-          fontSize={{ base: "17px", md: "30px" }}
+          fontSize={{ base: "17px", md: "25px" }}
         >
-          Popular Shows
+          Searched Results ({movie.length} of {totalResults} )
         </Heading>
         <SimpleGrid
           columns={{ base: "2", md: "5" }}

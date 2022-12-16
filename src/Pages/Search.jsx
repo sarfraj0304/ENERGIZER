@@ -13,12 +13,17 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { IoSearch } from "react-icons/io5";
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Search = () => {
+  const [inputText, setInputText] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-
+  const handleSearch = () => {
+    console.log(inputText);
+    onClose();
+  };
   return (
     <>
       {/* <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
@@ -39,18 +44,31 @@ export const Search = () => {
 
           <DrawerBody>
             <InputGroup ml={"10px"}>
-              <InputLeftElement
+              {/* <InputLeftElement
                 pointerEvents="none"
                 children={<IoSearch fontSize={"22px"} />}
-              />
+              /> */}
               <Input
+                value={inputText}
+                onChange={(e) => {
+                  setInputText(e.target.value);
+                }}
                 type="text"
-                w={"190px"}
+                w={"70%"}
                 transition="all 0.5s"
                 fontSize={"13px"}
                 placeholder="Search for Movies, Shows, Channels etc."
-                _focus={{ width: "260px" }}
+                _focus={{ width: "100%" }}
               />
+              <Link to={`/searchTmdbData/${inputText}`}>
+                {" "}
+                <Button
+                  onClick={handleSearch}
+                  marginLeft="5px"
+                  size={{ base: "md", md: "md" }}
+                  leftIcon={<IoSearch />}
+                ></Button>
+              </Link>
             </InputGroup>
           </DrawerBody>
         </DrawerContent>
