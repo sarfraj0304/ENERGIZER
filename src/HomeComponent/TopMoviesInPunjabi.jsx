@@ -1,5 +1,5 @@
 import { SkeletonLoader } from "../components/SkeletonLoader";
-
+import { ShareNow } from "../components/ShareNow";
 import {
   Box,
   Button,
@@ -136,7 +136,8 @@ const TopMoviesInPunjabi = () => {
                       Watch Now
                     </Button>
                   </Link>
-                  <Button
+                  <ShareNow />
+                  {/* <Button
                     colorScheme="teal"
                     variant="outline"
                     border="none"
@@ -152,7 +153,7 @@ const TopMoviesInPunjabi = () => {
                     marginRight="10px"
                   >
                     Share
-                  </Button>
+                  </Button> */}
                 </Box>
               </Box>
               <Image

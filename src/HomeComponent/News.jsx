@@ -8,6 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { ShareNow } from "../components/ShareNow";
 import { RxDotFilled } from "react-icons/rx";
 import { ImNewspaper } from "react-icons/im";
 import Carousel from "react-multi-carousel";
@@ -135,7 +136,8 @@ const FreeLiveNews = () => {
                       Read Now
                     </Button>
                   </Link>
-                  <Button
+                  <ShareNow />
+                  {/* <Button
                     colorScheme="teal"
                     variant="outline"
                     border="none"
@@ -151,7 +153,7 @@ const FreeLiveNews = () => {
                     marginRight="10px"
                   >
                     Share
-                  </Button>
+                  </Button> */}
                 </Box>
               </Box>
               <Image

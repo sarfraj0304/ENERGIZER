@@ -5,6 +5,8 @@ import styles from "../Styles/CarouselMain.module.css";
 import { Link } from "react-router-dom";
 
 export const MainCarouselImage = ({ image, title, id }) => {
+  const LoginUserDetails =
+    JSON.parse(sessionStorage.getItem("LoginUserDetails")) || [];
   return (
     <>
       <Image minW="100%" src={image} />
@@ -41,21 +43,25 @@ export const MainCarouselImage = ({ image, title, id }) => {
             Play Now
           </Button>
         </Link>
-        <Link to="/buyPlan">
-          {" "}
-          <Button
-            width={{ base: "73px", md: "105px" }}
-            height="35px"
-            _hover={{ bgColor: "#320c52" }}
-            leftIcon={<FaCrown />}
-            backgroundColor="#8230c6"
-            color="white"
-            variant="solid"
-            fontSize={{ base: "10px", md: "14px" }}
-          >
-            BUY PLAN
-          </Button>
-        </Link>
+        {/* {LoginUserDetails[0].Subscription === false ||
+        LoginUserDetails === [] ? ( */}
+        {LoginUserDetails.length === 0 || !LoginUserDetails[0].Subscription ? (
+          <Link to="/buyPlan">
+            {" "}
+            <Button
+              width={{ base: "73px", md: "105px" }}
+              height="35px"
+              _hover={{ bgColor: "#320c52" }}
+              leftIcon={<FaCrown />}
+              backgroundColor="#8230c6"
+              color="white"
+              variant="solid"
+              fontSize={{ base: "10px", md: "14px" }}
+            >
+              BUY PLAN
+            </Button>
+          </Link>
+        ) : null}
       </Box>
     </>
   );

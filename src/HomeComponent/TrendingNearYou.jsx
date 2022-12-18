@@ -8,6 +8,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { FacebookShareButton, FacebookIcon } from "react-share";
 import { RxDotFilled } from "react-icons/rx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -18,7 +19,7 @@ import axios from "axios";
 import "../index.css";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
 import { Link } from "react-router-dom";
-
+import { ShareNow } from "../components/ShareNow";
 const TrendingNearYou = () => {
   const [loader, setLoader] = useState(true);
   const cat = "TopNetflixData";
@@ -141,24 +142,26 @@ const TrendingNearYou = () => {
                       Watch Now
                     </Button>
                   </Link>
-
-                  <Button
-                    colorScheme="teal"
-                    variant="outline"
-                    border="none"
-                    backgroundColor={bg}
-                    width={{ base: "73px", md: "90px" }}
-                    fontSize={{ base: "8px", md: "12px" }}
-                    height={{ base: "25px", md: "35px" }}
-                    _hover={{
-                      color: "red",
-                    }}
-                    leftIcon={<BsShare />}
-                    color={fontColor}
-                    marginRight="10px"
-                  >
-                    Share
-                  </Button>
+                  {/* <FacebookShareButton url="https://www.facebook.com/">
+                    <Button
+                      colorScheme="teal"
+                      variant="outline"
+                      border="none"
+                      backgroundColor={bg}
+                      width={{ base: "73px", md: "90px" }}
+                      fontSize={{ base: "8px", md: "12px" }}
+                      height={{ base: "25px", md: "35px" }}
+                      _hover={{
+                        color: "red",
+                      }}
+                      leftIcon={<BsShare />}
+                      color={fontColor}
+                      marginRight="10px"
+                    >
+                      Share
+                    </Button>
+                  </FacebookShareButton> */}
+                  <ShareNow />
                 </Box>
               </Box>
               <Image

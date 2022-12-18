@@ -6,12 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import { theme } from "./Theme";
+import ScrollToTop from "./components/ScrollToTop";
 import { ContextProviderMovie } from "./Context/ContextProviderMovie";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <ContextProviderMovie>
       <ChakraProvider theme={theme}>
+        <ScrollToTop />
         <App />
       </ChakraProvider>
     </ContextProviderMovie>
