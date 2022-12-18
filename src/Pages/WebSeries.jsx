@@ -9,6 +9,7 @@ import {
   useColorModeValue,
   Heading,
 } from "@chakra-ui/react";
+import { ShareNow } from "../components/ShareNow";
 import { Pagination } from "./Pagination";
 import styles from "../Styles/TrendingNearYou.module.css";
 import React from "react";
@@ -120,7 +121,8 @@ export const WebSeries = () => {
                         Watch Now
                       </Button>
                     </Link>
-                    <Button
+                    <ShareNow />
+                    {/* <Button
                       colorScheme="teal"
                       variant="outline"
                       border="none"
@@ -136,7 +138,7 @@ export const WebSeries = () => {
                       marginRight="10px"
                     >
                       Share
-                    </Button>
+                    </Button> */}
                   </Box>
                 </Box>
                 <Image

@@ -20,7 +20,11 @@ import { BsCheckLg } from "react-icons/bs";
 import BuyplanStyles from "../Styles/BuyPlan.module.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useParams } from "react-router-dom";
+import { PaymentPage } from "./PaymentPage";
 export const BuyplanPage = () => {
+  const { id } = useParams();
+
   return (
     <Box bg={useColorModeValue("white", "#0f0617")}>
       <Navbar />
@@ -97,10 +101,11 @@ export const BuyplanPage = () => {
             <Tr>
               <Td></Td>
               <Td>
-                <Button size={{ base: "md", md: "lg" }}>Buy Plan</Button>
+                {/* Payment Page */}
+                <PaymentPage id={id} type={"PREMIUM HD"} amount={"299"} />
               </Td>
               <Td>
-                <Button size={{ base: "md", md: "lg" }}>Buy Plan</Button>
+                <PaymentPage id={id} type={"PREMIUM 4K"} amount={"499"} />
               </Td>
             </Tr>
           </Tbody>

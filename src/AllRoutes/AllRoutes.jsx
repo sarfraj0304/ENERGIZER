@@ -9,6 +9,7 @@ import { BuyplanPage } from "../Pages/BuyPlan";
 import { NewsDetails } from "../Pages/NewsDetails";
 import TmdbMovieDetails from "../Pages/TmdbMovieDetails";
 import { SearchDataFromTmdb } from "../Pages/SearchDataFromTmdb";
+import { AccountInfo } from "../Pages/AccountInfo";
 function AllRoutes() {
   return (
     <Routes>
@@ -31,6 +32,7 @@ function AllRoutes() {
         path="/searchTmdbData/:inputText"
         element={<SearchDataFromTmdb />}
       ></Route>
+      <Route path="/AccountInfo/:FirstName" element={<AccountInfo />}></Route>
     </Routes>
   );
 }

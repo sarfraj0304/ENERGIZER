@@ -8,8 +8,10 @@ import { FaCrown } from "react-icons/fa";
 import { ContextProvider } from "../Context/ContextProviderMovie";
 import { RxDotFilled } from "react-icons/rx";
 import { BsFillPlayFill, BsShare } from "react-icons/bs";
+import { ShareNowTMDB } from "./SharenowTMDB";
 import { RiPlayListAddLine } from "react-icons/ri";
 import axios from "axios";
+import { ShareNow } from "../components/ShareNow";
 import stylesRecommended from "../Styles/TrendingNearYou.module.css";
 import {
   Box,
@@ -27,6 +29,10 @@ import { FaStar } from "react-icons/fa";
 // import { whiten } from "@chakra-ui/theme-tools";
 import { SkeletonLoader } from "../components/SkeletonLoader";
 const MovieDetails = () => {
+  const LoginUserDetails =
+    JSON.parse(sessionStorage.getItem("LoginUserDetails")) || [];
+  console.log(LoginUserDetails);
+
   const [loader, setLoader] = useState(true);
 
   const [data, setData] = useState([]);
@@ -99,22 +105,25 @@ const MovieDetails = () => {
             >
               Ad-Free with Premium now at 30%OFF : ₹699/year
             </Text>
-            <Link to="/buyPlan">
-              {" "}
-              <Button
-                width={{ base: "73px", md: "105px" }}
-                mr={4}
-                height="35px"
-                _hover={{ bgColor: "#320c52" }}
-                leftIcon={<FaCrown />}
-                backgroundColor="#8230c6"
-                color="white"
-                variant="solid"
-                fontSize={{ base: "10px", md: "14px" }}
-              >
-                BUY PLAN
-              </Button>
-            </Link>
+            {LoginUserDetails.length === 0 ||
+            !LoginUserDetails[0].Subscription ? (
+              <Link to="/buyPlan">
+                {" "}
+                <Button
+                  width={{ base: "73px", md: "105px" }}
+                  mr={4}
+                  height="35px"
+                  _hover={{ bgColor: "#320c52" }}
+                  leftIcon={<FaCrown />}
+                  backgroundColor="#8230c6"
+                  color="white"
+                  variant="solid"
+                  fontSize={{ base: "10px", md: "14px" }}
+                >
+                  BUY PLAN
+                </Button>
+              </Link>
+            ) : null}
           </Box>
           <Heading
             marginTop={"8px"}
@@ -171,7 +180,8 @@ const MovieDetails = () => {
             color="white"
             width={{ base: "50%", md: "30%" }}
           >
-            <Box
+            <ShareNowTMDB />
+            {/* <Box
               cursor="pointer"
               width="50%"
               display="flex"
@@ -182,8 +192,9 @@ const MovieDetails = () => {
               justifyContent="space-between"
             >
               <BsShare />
-              <Text fontSize={{ base: "13px", md: "15px" }}>Share</Text>
-            </Box>
+              
+              <Text fontSize={{ base: "13px", md: "15px" }}>Share</Text> 
+            </Box> */}
             <Box
               cursor="pointer"
               width="50%"
@@ -312,7 +323,8 @@ const MovieDetails = () => {
                           Watch Now
                         </Button>
                       </Link>
-                      <Button
+                      <ShareNow />
+                      {/* <Button
                         colorScheme="teal"
                         variant="outline"
                         border="none"
@@ -328,7 +340,7 @@ const MovieDetails = () => {
                         marginRight="10px"
                       >
                         Share
-                      </Button>
+                      </Button> */}
                     </Box>
                   </Box>
                   <Image

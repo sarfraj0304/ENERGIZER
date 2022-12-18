@@ -11,7 +11,7 @@ import { CgProfile } from "react-icons/cg";
 import { FaCrown } from "react-icons/fa";
 import { IoSearch } from "react-icons/io5";
 import styles from "../Styles/Navbar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink } from "react-router-dom";
 import {
   Box,
   Flex,
@@ -46,6 +46,15 @@ export default function Navbar() {
   const bg = useColorModeValue("gray.100", "gray.900");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const colorNav = useColorModeValue("#8230c6", "#8230c6");
+
+  const Loginbg = useColorModeValue("gray.100", "#0f0617");
+  const LoginHover = useColorModeValue("gray.300", "#200337");
+  const LoginUserDetails =
+    JSON.parse(sessionStorage.getItem("LoginUserDetails")) || [];
+  console.log(LoginUserDetails);
+  const FirstName = LoginUserDetails.map((el) => {
+    return el.FirstName;
+  });
   const handleSearch = () => {
     console.log(inputText);
   };
@@ -173,8 +182,9 @@ export default function Navbar() {
                     onClick={handleSearch}
                     marginLeft="5px"
                     size={{ base: "sm", md: "md" }}
-                    leftIcon={<IoSearch />}
-                  ></Button>
+                  >
+                    {<IoSearch />}
+                  </Button>
                 </Link>
               </InputGroup>
             </Center>
@@ -219,45 +229,44 @@ export default function Navbar() {
                 </Link>
               </Tooltip>
             </Center>
-            <LoginButton />
-            {/* <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <CgProfile size={"30px"} />
-              </MenuButton>
-              <MenuList bg={useColorModeValue("gray.100", "#0f0617")}>
-                <MenuItem
-                  bg={useColorModeValue("gray.100", "#0f0617")}
-                  _hover={{ bg: useColorModeValue("gray.300", "#200337") }}
+            {/* Check for Login Purpose */}
+            {LoginUserDetails.length === 0 ? (
+              <LoginButton />
+            ) : (
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={"full"}
+                  variant={"link"}
+                  cursor={"pointer"}
+                  minW={0}
                 >
-                  Account Info
-                </MenuItem>
-                <MenuItem
-                  bg={useColorModeValue("gray.100", "#0f0617")}
-                  _hover={{ bg: useColorModeValue("gray.300", "#200337") }}
-                >
-                  Login / SignUp
-                </MenuItem>
-                <MenuDivider />
-                <MenuItem
-                  bg={useColorModeValue("gray.100", "#0f0617")}
-                  _hover={{ bg: useColorModeValue("gray.300", "#200337") }}
-                >
-                  About Us
-                </MenuItem>
-                <MenuItem
-                  bg={useColorModeValue("gray.100", "#0f0617")}
-                  _hover={{ bg: useColorModeValue("gray.300", "#200337") }}
-                >
-                  Logout
-                </MenuItem>
-              </MenuList>
-            </Menu> */}
+                  <CgProfile size={"30px"} />
+                </MenuButton>
+                <MenuList bg={Loginbg}>
+                  <Link to={`/AccountInfo/${FirstName}`}>
+                    <MenuItem bg={Loginbg} _hover={{ bg: LoginHover }}>
+                      Account Info
+                    </MenuItem>
+                  </Link>
+                  <MenuDivider />{" "}
+                  <Link to="/">
+                    <MenuItem
+                      onClick={() => {
+                        sessionStorage.removeItem("LoginUserDetails");
+                        setInterval(() => {
+                          window.location.reload();
+                        }, 1000);
+                      }}
+                      bg={Loginbg}
+                      _hover={{ bg: LoginHover }}
+                    >
+                      Logout
+                    </MenuItem>
+                  </Link>
+                </MenuList>
+              </Menu>
+            )}
           </Flex>
         </Flex>
 

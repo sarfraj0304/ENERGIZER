@@ -7,6 +7,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import { ShareNow } from "../components/ShareNow";
 import { RxDotFilled } from "react-icons/rx";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -135,7 +136,8 @@ const TopTenMoviesInIndia = () => {
                       Watch Now
                     </Button>
                   </Link>
-                  <Button
+                  <ShareNow />
+                  {/* <Button
                     colorScheme="teal"
                     variant="outline"
                     border="none"
@@ -151,7 +153,7 @@ const TopTenMoviesInIndia = () => {
                     marginRight="10px"
                   >
                     Share
-                  </Button>
+                  </Button> */}
                 </Box>
               </Box>
               <Image

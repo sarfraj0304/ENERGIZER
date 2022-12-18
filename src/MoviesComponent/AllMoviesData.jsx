@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Heading,
 } from "@chakra-ui/react";
+import { ShareNow } from "../components/ShareNow";
 import styles from "../Styles/TrendingNearYou.module.css";
 import React from "react";
 import { useEffect, useState } from "react";
@@ -104,7 +105,8 @@ export const AllMoviesData = ({ cat, type }) => {
                       Watch Now
                     </Button>
                   </Link>
-                  <Button
+                  <ShareNow />
+                  {/* <Button
                     colorScheme="teal"
                     variant="outline"
                     border="none"
@@ -120,7 +122,7 @@ export const AllMoviesData = ({ cat, type }) => {
                     marginRight="10px"
                   >
                     Share
-                  </Button>
+                  </Button> */}
                 </Box>
               </Box>
               <Image
