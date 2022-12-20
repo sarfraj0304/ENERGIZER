@@ -43,7 +43,7 @@ const MovieDetails = () => {
       setLoader(false);
     }, 3000);
     axios
-      .get(`http://localhost:3000/${cat}/${id}`)
+      .get(`https://energizer.onrender.com/${cat}/${id}`)
       .then((res) => setData(res.data))
       .catch(console.error());
   }, [id]);
@@ -54,7 +54,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/Recommended`)
+      .get(`https://energizer.onrender.com/Recommended`)
       .then((res) => setRecommendedData(res.data))
       .catch(console.error());
   }, [id]);

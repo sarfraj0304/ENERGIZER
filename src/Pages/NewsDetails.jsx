@@ -22,7 +22,7 @@ export const NewsDetails = () => {
       setLoading(false);
     }, 3000);
     axios
-      .get(` http://localhost:3000/News/${id}`)
+      .get(` https://energizer.onrender.com/News/${id}`)
       .then((res) => setNewsData(res.data))
       .catch(console.error());
   }, [id]);

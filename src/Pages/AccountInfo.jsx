@@ -167,151 +167,161 @@ export const AccountInfo = () => {
                   <Divider m="auto" w="100%" height="30px" />
                 </Stack>
                 <Box marginTop="20px">
-                  <Text fontSize="20px" fontWeight="bold">
-                    You have Subscribed{" "}
-                    {inputUserDetails[0].SubscriptionDetails}
-                  </Text>
                   {inputUserDetails[0].SubscriptionDetails === "PREMIUM 4K" &&
                   inputUserDetails[0].Subscription ? (
-                    <TableContainer w={{ base: "90%", md: "100%" }} m="auto">
-                      <Table
-                        variant="simple"
-                        //   border="1px solid"
-                        //   borderRadius="10px"
-                        marginTop={{ base: "20px", md: "40px" }}
-                      >
-                        <Thead>
-                          <Tr>
-                            <Th></Th>
-                            <Th fontSize={{ base: "12px", md: "14px" }}>
-                              Premium 4k
-                            </Th>
-                          </Tr>
-                        </Thead>
-                        <Tbody>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Premium content
-                              <Text fontSize={{ base: "10px", md: "12px" }}>
-                                Movies, Web Series, TV Shows, Live TV, Downloads
-                              </Text>
-                            </Td>
-                            <Td>
-                              <BsCheckLg />
-                            </Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Ad-free
-                            </Td>
-                            <Td>
-                              <BsCheckLg />
-                            </Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Device
-                              <Text fontSize={{ base: "10px", md: "12px" }}>
-                                Mobile, TV and Laptop
-                              </Text>
-                            </Td>
-                            <Td>
-                              <BsCheckLg />
-                            </Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              No. of screens
-                            </Td>
-                            <Td>4</Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Max audio quality
-                            </Td>
-                            <Td>Dolby Atmos</Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Max video quality
-                            </Td>
-                            <Td>UHD (2160p)</Td>
-                          </Tr>
-                        </Tbody>
-                      </Table>
-                    </TableContainer>
+                    <Box>
+                      <Text fontSize="20px" fontWeight="bold">
+                        You have Subscribed{" "}
+                        {inputUserDetails[0].SubscriptionDetails}
+                      </Text>
+                      <TableContainer w={{ base: "90%", md: "100%" }} m="auto">
+                        <Table
+                          variant="simple"
+                          //   border="1px solid"
+                          //   borderRadius="10px"
+                          marginTop={{ base: "20px", md: "40px" }}
+                        >
+                          <Thead>
+                            <Tr>
+                              <Th></Th>
+                              <Th fontSize={{ base: "12px", md: "14px" }}>
+                                Premium 4k
+                              </Th>
+                            </Tr>
+                          </Thead>
+                          <Tbody>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Premium content
+                                <Text fontSize={{ base: "10px", md: "12px" }}>
+                                  Movies, Web Series, TV Shows, Live TV,
+                                  Downloads
+                                </Text>
+                              </Td>
+                              <Td>
+                                <BsCheckLg />
+                              </Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Ad-free
+                              </Td>
+                              <Td>
+                                <BsCheckLg />
+                              </Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Device
+                                <Text fontSize={{ base: "10px", md: "12px" }}>
+                                  Mobile, TV and Laptop
+                                </Text>
+                              </Td>
+                              <Td>
+                                <BsCheckLg />
+                              </Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                No. of screens
+                              </Td>
+                              <Td>4</Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Max audio quality
+                              </Td>
+                              <Td>Dolby Atmos</Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Max video quality
+                              </Td>
+                              <Td>UHD (2160p)</Td>
+                            </Tr>
+                          </Tbody>
+                        </Table>
+                      </TableContainer>
+                    </Box>
                   ) : !inputUserDetails[0].Subscription ? (
                     <Text fontSize="20px" fontWeight="bold">
                       No Subscription Found!
                     </Text>
                   ) : (
-                    <TableContainer w={{ base: "90%", md: "100%" }} m="auto">
-                      <Table
-                        variant="simple"
-                        //   border="1px solid"
-                        //   borderRadius="10px"
-                        marginTop={{ base: "20px", md: "40px" }}
-                      >
-                        <Thead>
-                          <Tr>
-                            <Th></Th>
-                            <Th fontSize={{ base: "12px", md: "14px" }}>
-                              Premium HD
-                            </Th>
-                          </Tr>
-                        </Thead>
-                        <Tbody>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Premium content
-                              <Text fontSize={{ base: "10px", md: "12px" }}>
-                                Movies, Web Series, TV Shows, Live TV, Downloads
-                              </Text>
-                            </Td>
-                            <Td>
-                              <BsCheckLg />
-                            </Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Ad-free
-                            </Td>
-                            <Td>
-                              <BsCheckLg />
-                            </Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Device
-                              <Text fontSize={{ base: "10px", md: "12px" }}>
-                                Mobile, TV and Laptop
-                              </Text>
-                            </Td>
-                            <Td>
-                              <BsCheckLg />
-                            </Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              No. of screens
-                            </Td>
-                            <Td>2</Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Max audio quality
-                            </Td>
-                            <Td>Dolby 5.1</Td>
-                          </Tr>
-                          <Tr>
-                            <Td fontSize={{ base: "17px", md: "20px" }}>
-                              Max video quality
-                            </Td>
-                            <Td>FHD (1080p)</Td>
-                          </Tr>
-                        </Tbody>
-                      </Table>
-                    </TableContainer>
+                    <Box>
+                      <Text fontSize="20px" fontWeight="bold">
+                        You have Subscribed{" "}
+                        {inputUserDetails[0].SubscriptionDetails}
+                      </Text>
+                      <TableContainer w={{ base: "90%", md: "100%" }} m="auto">
+                        <Table
+                          variant="simple"
+                          //   border="1px solid"
+                          //   borderRadius="10px"
+                          marginTop={{ base: "20px", md: "40px" }}
+                        >
+                          <Thead>
+                            <Tr>
+                              <Th></Th>
+                              <Th fontSize={{ base: "12px", md: "14px" }}>
+                                Premium HD
+                              </Th>
+                            </Tr>
+                          </Thead>
+                          <Tbody>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Premium content
+                                <Text fontSize={{ base: "10px", md: "12px" }}>
+                                  Movies, Web Series, TV Shows, Live TV,
+                                  Downloads
+                                </Text>
+                              </Td>
+                              <Td>
+                                <BsCheckLg />
+                              </Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Ad-free
+                              </Td>
+                              <Td>
+                                <BsCheckLg />
+                              </Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Device
+                                <Text fontSize={{ base: "10px", md: "12px" }}>
+                                  Mobile, TV and Laptop
+                                </Text>
+                              </Td>
+                              <Td>
+                                <BsCheckLg />
+                              </Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                No. of screens
+                              </Td>
+                              <Td>2</Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Max audio quality
+                              </Td>
+                              <Td>Dolby 5.1</Td>
+                            </Tr>
+                            <Tr>
+                              <Td fontSize={{ base: "17px", md: "20px" }}>
+                                Max video quality
+                              </Td>
+                              <Td>FHD (1080p)</Td>
+                            </Tr>
+                          </Tbody>
+                        </Table>
+                      </TableContainer>
+                    </Box>
                   )}
                 </Box>
               </TabPanel>

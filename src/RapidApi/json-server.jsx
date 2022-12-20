@@ -11,7 +11,7 @@ export const JsonServerData = () => {
   console.log(popularMovie);
 
   // const FetchMovieData = (data) => {
-  //   axios.post(`http://localhost:3000/News`, data).catch(console.error());
+  //   axios.post(`https://energizer.onrender.com/News`, data).catch(console.error());
   // };
   // popularMovie.map((el) => {
   //   let dataToSave = {

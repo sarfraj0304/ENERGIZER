@@ -51,7 +51,7 @@ export const TmdbMovie = () => {
         textAlign="left"
         fontSize={{ base: "17px", md: "30px" }}
       >
-        Popular Shows
+        Popular Movies
       </Heading>
       <SimpleGrid
         columns={{ base: "2", md: "5" }}

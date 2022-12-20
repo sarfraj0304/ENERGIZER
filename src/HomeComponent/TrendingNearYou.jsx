@@ -30,7 +30,7 @@ const TrendingNearYou = () => {
       setLoader(false);
     }, 4000);
     axios
-      .get(`http://localhost:3000/${cat}`)
+      .get(`https://energizer.onrender.com/${cat}`)
       .then((res) => setData(res.data))
       .catch(console.error());
   }, []);

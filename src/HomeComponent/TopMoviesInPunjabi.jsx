@@ -29,7 +29,7 @@ const TopMoviesInPunjabi = () => {
       setLoader(false);
     }, 4000);
     axios
-      .get(`http://localhost:3000/${cat}`)
+      .get(`https://energizer.onrender.com/${cat}`)
       .then((res) => setData(res.data))
       .catch(console.error());
   }, []);
@@ -72,7 +72,7 @@ const TopMoviesInPunjabi = () => {
         textAlign="left"
         fontSize={{ base: "14px", md: "20px" }}
       >
-        Top ZEE5 Movies in Punjabi
+        Top ENERGIZER Movies in Punjabi
       </Heading>
       <Carousel
         responsive={responsive}

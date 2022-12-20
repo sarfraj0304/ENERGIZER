@@ -18,7 +18,7 @@ export const News = () => {
       setLoader(false);
     }, 4000);
     axios
-      .get(`http://localhost:3000/News`)
+      .get(`https://energizer.onrender.com/News`)
       .then((res) => setNews(res.data))
       .catch(console.error());
   }, []);

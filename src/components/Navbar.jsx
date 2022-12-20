@@ -214,7 +214,11 @@ export default function Navbar() {
                 <Link to="/buyPlan">
                   {" "}
                   <Button
-                    width={{ base: "73px", md: "105px" }}
+                    padding={{ base: "10px", md: "10px" }}
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    // width={{ base: "70px", md: "105px" }}
                     mr={4}
                     height="35px"
                     _hover={{ bgColor: "#320c52" }}
@@ -222,7 +226,7 @@ export default function Navbar() {
                     backgroundColor="#8230c6"
                     color="white"
                     variant="solid"
-                    fontSize={{ base: "10px", md: "14px" }}
+                    fontSize={{ base: "10px", md: "13px" }}
                   >
                     BUY PLAN
                   </Button>

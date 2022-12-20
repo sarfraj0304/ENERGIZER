@@ -7,7 +7,7 @@ export const TVShows = () => {
     <>
       <Navbar />
       <MainCarousel />
-      <AllMoviesData cat={"TopNetflixData"} type={"Movies"} />
+      <AllMoviesData cat={"TopNetflixData"} type={"Shows"} />
       <Footer />
     </>
   );

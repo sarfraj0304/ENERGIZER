@@ -56,7 +56,7 @@ export const WebSeries = () => {
           textAlign="left"
           fontSize={{ base: "17px", md: "30px" }}
         >
-          Popular Shows
+          Popular Series
         </Heading>
         <SimpleGrid
           columns={{ base: "2", md: "5" }}

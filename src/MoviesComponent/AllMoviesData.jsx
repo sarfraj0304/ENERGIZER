@@ -25,7 +25,7 @@ export const AllMoviesData = ({ cat, type }) => {
       setLoader(false);
     }, 4000);
     axios
-      .get(`http://localhost:3000/${cat}`)
+      .get(`https://energizer.onrender.com/${cat}`)
       .then((res) => setMovie(res.data))
       .catch(console.error());
   }, []);

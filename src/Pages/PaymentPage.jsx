@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useToast } from "@chakra-ui/react";
+import { Tooltip, useToast } from "@chakra-ui/react";
 import {
   Modal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   useDisclosure,
@@ -67,7 +66,7 @@ export const PaymentPage = ({ type, amount }) => {
             };
             axios
               .patch(
-                `http://localhost:3000/User_SignUP/${inputUserDetails[0].id}`,
+                `https://energizer.onrender.com/User_SignUP/${inputUserDetails[0].id}`,
                 DatatoSend
               )
               .then((res) => console.log(res));
@@ -122,7 +121,7 @@ export const PaymentPage = ({ type, amount }) => {
           };
           axios
             .patch(
-              `http://localhost:3000/User_SignUP/${inputUserDetails[0].id}`,
+              `https://energizer.onrender.com/User_SignUP/${inputUserDetails[0].id}`,
               DatatoSend
             )
             .then((res) => console.log(res));
@@ -159,14 +158,25 @@ export const PaymentPage = ({ type, amount }) => {
   const colors = useColorModeValue("blue.500", "white");
   return (
     <>
-      <Button
-        disabled={inputUserDetails.length === 0}
-        onClick={onOpen}
-        size={{ base: "md", md: "lg" }}
-      >
-        Buy Plan
-      </Button>
-
+      {inputUserDetails.length === 0 ? (
+        <Tooltip label="You Are Not Logged In">
+          <Button
+            disabled={inputUserDetails.length === 0}
+            onClick={onOpen}
+            size={{ base: "md", md: "lg" }}
+          >
+            Buy Plan
+          </Button>
+        </Tooltip>
+      ) : (
+        <Button
+          disabled={inputUserDetails.length === 0}
+          onClick={onOpen}
+          size={{ base: "md", md: "lg" }}
+        >
+          Buy Plan
+        </Button>
+      )}
       <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent bg={useColorModeValue("gray.200", "#291d34")}>

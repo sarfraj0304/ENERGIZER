@@ -48,7 +48,7 @@ export const LoginButton = () => {
   };
   const handleRegister = () => {
     axios
-      .get(`http://localhost:3000/User_SignUP`)
+      .get(`https://energizer.onrender.com/User_SignUP`)
       .then((res) => {
         let checkEmail = res.data.filter((el) => {
           return el.Email === userInputData.Email;
@@ -66,7 +66,10 @@ export const LoginButton = () => {
           if (checkEmail.length == 0) {
             if (checkPhone.length == 0) {
               axios
-                .post(`http://localhost:3000/User_SignUP`, userInputData)
+                .post(
+                  `https://energizer.onrender.com/User_SignUP`,
+                  userInputData
+                )
                 .then((res) => console.log(res))
                 .catch(console.error());
 
@@ -112,7 +115,7 @@ export const LoginButton = () => {
 
   const handleLogin = () => {
     axios
-      .get(`http://localhost:3000/User_SignUP`)
+      .get(`https://energizer.onrender.com/User_SignUP`)
       .then((res) => {
         let validateLogin = res.data.filter((el) => {
           return el.Email === userLoginInput.Email;
@@ -268,7 +271,7 @@ export const LoginButton = () => {
               textAlign="center"
               padding="10px"
             >
-              <ModalHeader>Login to ZEE5</ModalHeader>
+              <ModalHeader>Login to ENERGIZER</ModalHeader>
               <ModalCloseButton />
 
               <ModalBody>
@@ -305,7 +308,7 @@ export const LoginButton = () => {
                   Submit
                 </Button>
                 <Text display="flex" justifyContent="center" marginTop="10px">
-                  New to ZEE5 ?{" "}
+                  New to ENERGIZER ?{" "}
                   <Text
                     cursor="pointer"
                     color={color}

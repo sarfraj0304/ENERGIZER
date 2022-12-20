@@ -102,10 +102,10 @@ export const BuyplanPage = () => {
               <Td></Td>
               <Td>
                 {/* Payment Page */}
-                <PaymentPage id={id} type={"PREMIUM HD"} amount={"299"} />
+                <PaymentPage id={id} type={"PREMIUM HD"} amount={"399"} />
               </Td>
               <Td>
-                <PaymentPage id={id} type={"PREMIUM 4K"} amount={"499"} />
+                <PaymentPage id={id} type={"PREMIUM 4K"} amount={"699"} />
               </Td>
             </Tr>
           </Tbody>

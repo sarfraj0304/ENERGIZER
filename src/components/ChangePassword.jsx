@@ -70,7 +70,7 @@ export const ChangePassword = ({ id }) => {
                         })
                       : axios
                           .patch(
-                            `http://localhost:3000/User_SignUP/${id}`,
+                            `https://energizer.onrender.com/User_SignUP/${id}`,
                             dataToSend
                           )
                           .then((res) => {
