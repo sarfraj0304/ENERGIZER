@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+<h1 align="center">Energizer</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">Energizer is a OTT Platform Where You can Watch online Movies, TV Shows, Series and Read News.</h3>
 
-## Available Scripts
+<h3 align="center">The project has been completed within the duration of 5 days. I learnt a lot during the course of this project.</h3>
 
-In the project directory, you can run:
+<h3 align="center">Original website link: https://www.zee5.com/</h3>
 
-### `npm start`
+<h3 align="center">Link of our deployed project: https://energizer-tau.vercel.app/</h3>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2 align="center">🖥️ Tech Stack</h2>
 
-### `npm test`
+<h4 align="center">Frontend:</h4>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="reactjs" />
+  <img src="https://img.shields.io/badge/Chakra%20UI-3bc7bd?style=for-the-badge&logo=chakraui&logoColor=white" alt="chakra-ui" />
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="javascript" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="css3" />
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="html5" />
+</p>
 
-### `npm run build`
+<h4 align="center">Deployed On:</h4>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+  <img src="https://img.shields.io/badge/Vercel-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="vercel" />
+  <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white" alt="heroku" />
+</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screens
 
-### `npm run eject`
+- Homepage / Landing Page
+- TV Shows Page
+- Movies Page
+- Web Series Page
+- Movies/Series/Shows Details Page
+- News Page
+- Buy Plan Page
+- Login / Logout Page
+- Signup Page
+- Account Details Page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ <br />
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Login and Signup User Account
+- Enable/Disable Dark Mode
+- Search Real-Time Movies and Series.
+- Protected Routes(able to buy plan only after ogin)
+- Responsiveness
+- Specific User Account Detials
+- Reset Password
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br />
 
-## Learn More
+## Glimpses of Flowstock 🙈 :
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<table>
+  <tr>
+    <td><img src="https://i.ibb.co/kx33fk6/Home.png" alt="home" /></td>
+    <td><img src="https://i.ibb.co/T26Jz3C/Movies.png" alt="Movies" /></td>
+  </tr>
+  
+  <tr>
+    <td><img src="https://i.ibb.co/pKmMM2h/Details-Page.png" alt="Details Page" /></td>
+    <td><img src="https://i.ibb.co/JKMwh2L/Share.png" alt="share Page" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://i.ibb.co/m9gjn23/Light-Mode.png" alt="Light mode" /></td>
+    <td><img src="https://i.ibb.co/34Qcp9y/News-Page.png" alt="News Page" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://i.ibb.co/xHkK7M2/MYProfile.png" alt="myProfile" /></td>
+    <td><img src="https://i.ibb.co/f94WXgg/Subscription.png" alt="mySubscripton Page" /></td>
+  </tr>
+  <tr>
+    <td><img src="https://i.ibb.co/9hR8kBt/BuyPlan.png" /></td>
+       <td><img src="https://i.ibb.co/ZmkbTK5/mobile-View.png" alt="cart"/></td>
+  </tr>
+ 
+ 
+</table>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br />
+ 
+## Getting Started
 
-### Code Splitting
+This project was built using React, Chakra UI, HTML, CSS and JavaScript. It is an OTT web application and for running on your local environment you should follow these guidelines.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Prerequisites
 
-### Analyzing the Bundle Size
+- NPM
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Show your support
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
