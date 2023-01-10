@@ -62,25 +62,25 @@
 
 <table>
   <tr>
-    <td><img src="https://i.ibb.co/kx33fk6/Home.png" alt="home" /></td>
-    <td><img src="https://i.ibb.co/T26Jz3C/Movies.png" alt="Movies" /></td>
+    <td><img src="https://i.ibb.co/kx33fk6/Home.png" alt="home" width="100%" /></td>
+    <td><img src="https://i.ibb.co/T26Jz3C/Movies.png" alt="Movies"  width="100%"/></td>
   </tr>
   
   <tr>
-    <td><img src="https://i.ibb.co/pKmMM2h/Details-Page.png" alt="Details Page" /></td>
-    <td><img src="https://i.ibb.co/JKMwh2L/Share.png" alt="share Page" /></td>
+    <td><img src="https://i.ibb.co/pKmMM2h/Details-Page.png" alt="Details Page"  width="100%"/></td>
+    <td><img src="https://i.ibb.co/JKMwh2L/Share.png" alt="share Page"  width="100%"/></td>
   </tr>
   <tr>
-    <td><img src="https://i.ibb.co/m9gjn23/Light-Mode.png" alt="Light mode" /></td>
-    <td><img src="https://i.ibb.co/34Qcp9y/News-Page.png" alt="News Page" /></td>
+    <td><img src="https://i.ibb.co/m9gjn23/Light-Mode.png" alt="Light mode"  width="100%"/></td>
+    <td><img src="https://i.ibb.co/34Qcp9y/News-Page.png" alt="News Page"  width="100%"/></td>
   </tr>
   <tr>
-    <td><img src="https://i.ibb.co/xHkK7M2/MYProfile.png" alt="myProfile" /></td>
-    <td><img src="https://i.ibb.co/f94WXgg/Subscription.png" alt="mySubscripton Page" /></td>
+    <td><img src="https://i.ibb.co/xHkK7M2/MYProfile.png" alt="myProfile"  width="100%"/></td>
+    <td><img src="https://i.ibb.co/f94WXgg/Subscription.png" alt="mySubscripton Page"  width="100%"/></td>
   </tr>
   <tr>
-    <td><img src="https://i.ibb.co/9hR8kBt/BuyPlan.png" /></td>
-       <td><img src="https://i.ibb.co/ZmkbTK5/mobile-View.png" alt="cart"/></td>
+    <td><img src="https://i.ibb.co/9hR8kBt/BuyPlan.png"  width="100%"/></td>
+       <td><img src="https://i.ibb.co/ZmkbTK5/mobile-View.png" width="100%" alt="cart"/></td>
   </tr>
  
  
